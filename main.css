@@ -1,0 +1,46 @@
+html,
+body {
+  font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 100;
+}
+
+i,a,h1,ul,li {
+  transition: .3s ease-in-out;
+}
+
+a {
+  cursor: pointer;
+  color: inherit !important;
+}
+
+ul, li {
+  list-style-type: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: .3s;
+}
+
+i, a, button, select, div {
+  text-decoration: none !important;
+  outline: none !important;
+}
+
+section {
+  max-width: 60em;
+  margin: auto;
+  overflow-x: hidden;
+  padding: 1em 1em 0em;
+  transition: .3s ease-in-out; 
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 300 !important;
+}
+
+footer {
+  margin-top: 2em;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
