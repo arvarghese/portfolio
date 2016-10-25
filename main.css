@@ -2,6 +2,7 @@ html,
 body {
   font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 100;
+  font-size: 2em;
 }
 
 i,a,h1,ul,li {
@@ -26,7 +27,6 @@ i, a, button, select, div {
 }
 
 section {
-  max-width: 60em;
   margin: auto;
   overflow-x: hidden;
   padding: 1em 1em 0em;
@@ -43,4 +43,72 @@ footer {
 
 ::-webkit-scrollbar { 
     display: none; 
+}
+
+.portfolio-item {
+  /*flex: 30em;*/
+  align-self: stretch;
+  width: 40em;
+  height: 20em;
+  overflow: hidden;
+  box-shadow: .2em .2em .3em rgba(0,0,0,.5);
+  margin: 1em;
+  text-align: center;
+  /*background: #089ee5;*/
+  border-radius: .3em;
+  transition: .3s ease-in-out;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  filter: grayscale(100%);
+}
+
+.portfolio-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+.portfolio-item:focus,
+.portfolio-item:active,
+.portfolio-item:hover {
+  transform: scale(1.01);
+  filter: grayscale(0);
+}
+.portfolio-item>.overlay {
+  transition: .3s ease-in-out;
+  width: 10em;
+  height: 10em;
+  background: rgba(0,0,0,.3);
+  border-radius: 5em;
+  position: relative;
+  margin: auto;
+}
+
+.portfolio-item>.content {
+  transition: .3s ease-in-out;
+  width: 100%;
+  height: 100%;
+  background: red;
+  position: relative;
+  margin: auto;
+  transform: translateY(-100%); 
+}
+
+.resume-img {
+  background: url(http://i.imgur.com/PF5imjLh.jpg);
+}
+
+.blog-img {
+  background: url(http://i.imgur.com/jwpYs2zh.jpg);
+}
+
+.landing-img {
+  background: url(http://i.imgur.com/tHvkrGWh.jpg);
+}
+
+.meteor-img {
+  background: url(http://i.imgur.com/IXeTDowh.jpg);
 }
