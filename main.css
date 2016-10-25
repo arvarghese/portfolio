@@ -46,20 +46,17 @@ footer {
 }
 
 .portfolio-item {
-  /*flex: 30em;*/
   align-self: stretch;
-  width: 40em;
-  height: 20em;
+  width: 20em;
+  height: 10em;
   overflow: hidden;
   box-shadow: .2em .2em .3em rgba(0,0,0,.5);
   margin: 1em;
   text-align: center;
-  /*background: #089ee5;*/
   border-radius: .3em;
   transition: .3s ease-in-out;
   background-size: cover !important;
   background-repeat: no-repeat !important;
-  filter: grayscale(100%);
 }
 
 .portfolio-grid {
@@ -75,26 +72,41 @@ footer {
 .portfolio-item:active,
 .portfolio-item:hover {
   transform: scale(1.01);
-  filter: grayscale(0);
-}
-.portfolio-item>.overlay {
-  transition: .3s ease-in-out;
-  width: 10em;
-  height: 10em;
-  background: rgba(0,0,0,.3);
-  border-radius: 5em;
-  position: relative;
-  margin: auto;
 }
 
-.portfolio-item>.content {
+.portfolio-item:focus .overlay ,
+.portfolio-item:active .overlay,
+.portfolio-item:hover .overlay {
+  opacity: 1;
+  transform: scale(45);
+}
+
+.portfolio-item:focus .content ,
+.portfolio-item:active .content,
+.portfolio-item:hover .content {
+  opacity: 1;
+}
+
+.overlay {
   transition: .3s ease-in-out;
-  width: 100%;
-  height: 100%;
-  background: red;
+  width: 1em;
+  height: 1em;
+  background: #089ee5;
+  border-radius: 5em;
   position: relative;
+  opacity: 0;
+  z-index: -1;
+}
+
+.content {
+  width: 90%;
+  height: 80%;
+  background: rgba(0,0,0,.3);
+  z-index: 1;
   margin: auto;
-  transform: translateY(-100%); 
+  border-radius: 0.2em;
+  opacity: 0;
+  transition: .3s ease-in-out;
 }
 
 .resume-img {
