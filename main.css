@@ -47,16 +47,17 @@ footer {
 
 .portfolio-item {
   align-self: stretch;
-  width: 20em;
-  height: 10em;
+  width: 40em;
+  height: 20em;
   overflow: hidden;
   box-shadow: .2em .2em .3em rgba(0,0,0,.5);
   margin: 1em;
   text-align: center;
-  border-radius: .3em;
   transition: .3s ease-in-out;
   background-size: cover !important;
   background-repeat: no-repeat !important;
+  background-position: center !important;
+  position: relative;
 }
 
 .portfolio-grid {
@@ -68,45 +69,26 @@ footer {
   align-content: stretch;
 }
 
-.portfolio-item:focus,
-.portfolio-item:active,
-.portfolio-item:hover {
-  transform: scale(1.01);
-}
-
-.portfolio-item:focus .overlay ,
-.portfolio-item:active .overlay,
-.portfolio-item:hover .overlay {
-  opacity: 1;
-  transform: scale(45);
-}
-
-.portfolio-item:focus .content ,
-.portfolio-item:active .content,
-.portfolio-item:hover .content {
-  opacity: 1;
-}
-
-.overlay {
-  transition: .3s ease-in-out;
-  width: 1em;
-  height: 1em;
-  background: #089ee5;
-  border-radius: 5em;
-  position: relative;
-  opacity: 0;
-  z-index: -1;
-}
-
 .content {
-  width: 90%;
-  height: 80%;
-  background: rgba(0,0,0,.3);
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.5);
   z-index: 1;
   margin: auto;
-  border-radius: 0.2em;
-  opacity: 0;
   transition: .3s ease-in-out;
+  text-align: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .3s ease-in-out;
+  color: white !important;
+}
+
+.content:hover,
+.content:active,
+.content:focus {
+  opacity: 1;
 }
 
 .resume-img {
@@ -123,4 +105,39 @@ footer {
 
 .meteor-img {
   background: url(http://i.imgur.com/IXeTDowh.jpg);
+}
+
+.more-btn {
+  border: 3px solid white;
+  padding: .5em;
+  margin: .5em;
+  color: white !important;
+  width: 7em;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-weight: 600;
+}
+
+.site-btn {
+  border: 3px solid white;
+  padding: .5em;
+  margin: .5em;
+  width: 7em;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-weight: 600;
+}
+
+header>h2 {
+  font-weight: 500 !important;
+}
+
+.description {
+  margin: auto;
+}
+
+hr {
+  margin: 1em;
 }
