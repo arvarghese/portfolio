@@ -7,3 +7,7 @@ var Portfolio = {
 };
 
 Portfolio.initialize();
+
+$('.portfolio-item').hover(function(){
+	$(this).find('.content').toggleClass('content-visible');
+});
