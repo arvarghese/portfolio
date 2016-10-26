@@ -9,8 +9,8 @@ var Portfolio = {
 Portfolio.initialize();
 
 var showContent = function(){
-	$(this).find('.content,.overlay').toggleClass('content-visible overlay-visible');
+	$(this).find('.content').toggleClass('content-visible');
+	$(this).find('.background').toggleClass('background-covered');
 }
 
-
-$('.portfolio-item').focus(showContent);
+$('.portfolio-item').hover(showContent);
