@@ -69,6 +69,21 @@ footer {
   align-content: stretch;
 }
 
+.overlay {
+  visibility: hidden;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  background: red;
+  z-index: 1;
+  margin: auto;
+  text-align: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .3s ease-in-out;
+}
+
 .content {
   visibility: hidden;
   opacity: 0;
@@ -87,7 +102,12 @@ footer {
 
 .content-visible {
   opacity: 1 !important;
-  visibility: visible;
+  visibility: visible !important;
+}
+
+.overlay-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 /*.portfolio-item:hover .content,
 .content:hover  {
