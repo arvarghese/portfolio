@@ -85,9 +85,9 @@ footer {
   color: white !important;
 }
 
-.content:hover,
-.content:active,
-.content:focus {
+.portfolio-item:hover .content,
+.portfolio-item:active .content,
+.portfolio-item:focus .content {
   opacity: 1;
 }
 

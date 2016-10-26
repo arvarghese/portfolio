@@ -7,4 +7,3 @@ var Portfolio = {
 };
 
 Portfolio.initialize();
-
