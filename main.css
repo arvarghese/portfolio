@@ -71,7 +71,7 @@ footer {
   height: 100%;
   background-size: cover !important;
   background-repeat: no-repeat !important;
-  background-position: center !important;
+  background-position: top center !important;
   transition: .3s ease-in-out;
   z-index: 0;
 }
@@ -120,27 +120,26 @@ footer {
   background: url(http://i.imgur.com/IXeTDowh.jpg);
 }
 
-.more-btn {
+
+.more-btn, .site-btn {
   border: 3px solid white;
   padding: .5em;
   margin: .5em;
   color: white !important;
-  width: 7em;
+  width: 9em;
   position: absolute;
-  right: 0;
   bottom: 0;
   font-weight: 600;
+  text-transform: uppercase;
+  font-size: .8em;
+}
+
+.more-btn {
+  right: 0;
 }
 
 .site-btn {
-  border: 3px solid white;
-  padding: .5em;
-  margin: .5em;
-  width: 7em;
-  position: absolute;
   left: 0;
-  bottom: 0;
-  font-weight: 600;
 }
 
 header>h2 {
