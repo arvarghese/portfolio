@@ -13,11 +13,18 @@
     <link href="lib/animate.css/animate.min.css" rel="stylesheet">
 </head>
 <body>
-	<header class="text-center">
+	<header class="text-center wow fadeIn">
 		<h2>PORTFOLIO</h2>
 		<h5>WORKS, DESIGNS, EXPERIMENTS</h5>
+		<div class="text-center">
+	    	<span class="copyright">&copy; 2016 by Arun Varghese &nbsp;|
+				<a href="https://github.com/arvarghese/portfolio">
+					<i class="fa fa-fw fa-github"></i>
+				</a>
+			</span>
+		</div>
 	</header>
-	<section class="portfolio-grid">
+	<section id="portfolio" class="portfolio-grid">
 		<div class="portfolio-item wow fadeIn">
 			<div class="content">
 				<h2>ONLINE RESUME</h2>
@@ -25,7 +32,7 @@
 				<p class="description">
 					This is my resume site made from simple Javascript, HTML, and CSS
 				</p>
-				<a href="#"><div class="more-btn">Learn More</div></a>
+				<div class="more-btn" item="resume">Learn More</div>
 				<a target="_blank" href="http://avarghese.me/resume"><div class="site-btn">Visit Site</div></a>
 			</div>
 			<div class="background resume-img"></div>
@@ -37,7 +44,7 @@
 				<p class="description">
 					This is my personal site made from simple Javascript, HTML, and CSS
 				</p>
-				<a href="#"><div class="more-btn">Learn More</div></a>
+				<div class="more-btn" item="home">Learn More</div>
 				<a target="_blank" href="http://avarghese.me"><div class="site-btn">Visit Site</div></a>
 			</div>
 			<div class="background landing-img"></div>
@@ -48,9 +55,11 @@
 				<hr>
 				<p class="description">
 					This is my personal site built using Meteor.js
+					<br>
+					CURRENTLY DOWN FOR MAINTENANCE
 				</p>
-				<a href="#"><div class="more-btn">Learn More</div></a>
-				<a target="_blank" href="av.meteorapp.com"><div class="site-btn">Visit Site</div></a>
+				<div class="more-btn" item="meteor">Learn More</div>
+				<a target="_blank" href="http://av.meteorapp.com"><div class="site-btn">Visit Site</div></a>
 			</div>
 			<div class="background meteor-img"></div>
 		</div>
@@ -61,23 +70,15 @@
 				<p class="description">
 					This is my personal blog created using Jekyll and Github
 				</p>
-				<a href="#"><div class="more-btn">Learn More</div></a>
+				<div class="more-btn" item="blog">Learn More</div>
 				<a target="_blank" href="http://avarghese.me/blog"><div class="site-btn">Visit Site</div></a>
 			</div>
 			<div class="background blog-img"></div>
 		</div>
 	</section>
-	 <section id="footer" class="footer wow fadeIn">
-    	<div class="text-center">
-	    	<span class="copyright">&copy; 2016 by Arun Varghese &nbsp;|
-				<a href="https://github.com/arvarghese/portfolio">
-					<i class="fa fa-fw fa-github"></i>
-				</a>
-			</span>
-		</div>
-    </section>
-
-
+	<section id="information">
+		
+	</section>
     <script src="lib/jquery/dist/jquery.min.js">
     </script> 
     <script src="lib/wow/dist/wow.min.js">

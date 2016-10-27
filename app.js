@@ -1,16 +1,35 @@
 new WOW().init()
 
-var Portfolio = {
-	initialize: function(){
-		
+var portfolioDetails = {
+	"resume":{
+
+	},
+	"home":{
+
+	},
+	"blog":{
+
+	},
+	"meteor":{
+
 	}
 };
 
-Portfolio.initialize();
+var Portfolio = {
+	showContent: function(e){
+		e.preventDefault();
+		$(this).find('.content').toggleClass('content-visible');
+		$(this).find('.background').toggleClass('background-covered');
+	},
+	loadItemDetails: function(e){
+		e.preventDefault();
+		$('#portfolio').addClass('portfolio-hidden');
+		Portfolio.getItemData($(this).attr('item'));
+	},
+	getItemData: function(item){
+		console.log(item);
+	}	
+};
 
-var showContent = function(){
-	$(this).find('.content').toggleClass('content-visible');
-	$(this).find('.background').toggleClass('background-covered');
-}
-
-$('.portfolio-item').hover(showContent);
+$('.portfolio-item').hover(Portfolio.showContent);
+$('.more-btn').click(Portfolio.loadItemDetails);

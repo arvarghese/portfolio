@@ -37,10 +37,6 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: 300 !important;
 }
 
-footer {
-  margin-top: 2em;
-}
-
 ::-webkit-scrollbar { 
     display: none; 
 }
@@ -132,6 +128,7 @@ footer {
   font-weight: 600;
   text-transform: uppercase;
   font-size: .8em;
+  cursor: pointer;
 }
 
 .more-btn {
@@ -140,6 +137,10 @@ footer {
 
 .site-btn {
   left: 0;
+}
+
+header {
+  font-size: .8em;
 }
 
 header>h2 {
@@ -152,4 +153,9 @@ header>h2 {
 
 hr {
   margin: 1em;
+}
+
+.portfolio-hidden {
+  transform: translateY(-100%);
+  opacity: 0;
 }
