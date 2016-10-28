@@ -49,10 +49,10 @@ var Portfolio = {
 	},
 	getItemData: function(item){
 		var item = portfolioDetails[item];
-		$('#site').text(item.url);
-		$('#techstack').text(item.techstack);
-		$('#description').text(item.description);
-		$('#blog').html('<a href="'+item.blog+'" target="_blank">Link to Blog Post</a>');
+		$('#site').html('Website: <a href="'+item.url+'" target="_blank">'+item.url+'</a>');
+		$('#techstack').html("Technology: " + item.techstack);
+		$('#description').html("Description: " + item.description);
+		$('#blog').html('Blog link: <a href="'+item.blog+'" target="_blank"><i class="fa fa-link"></i></a>');
 	}	
 };
 
