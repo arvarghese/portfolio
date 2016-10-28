@@ -115,7 +115,9 @@ h1,h2,h3,h4,h5,h6 {
 .meteor-img {
   background: url(http://i.imgur.com/IXeTDowh.jpg);
 }
-
+.resumebuilder-img {
+  background: url(http://i.imgur.com/zLs8iqFh.jpg); 
+}
 
 .more-btn, .site-btn {
   border: 3px solid white;
@@ -164,7 +166,7 @@ hr {
   max-width: 60em;
   min-width: 25em;
   min-height: 25em;
-  margin: auto;
+  margin: 0px 1em !important;
   background: radial-gradient(rgba(0,0,0,.6), black);
   position: fixed;
   top: 50%;
