@@ -156,6 +156,35 @@ hr {
 }
 
 .portfolio-hidden {
-  transform: translateY(-100%);
   opacity: 0;
+  transform: translateY(100%);
+}
+
+.item-details {
+  max-width: 60em;
+  min-width: 25em;
+  min-height: 25em;
+  margin: auto;
+  background: radial-gradient(rgba(0,0,0,.6), black);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -150%);
+  color: white;
+  border-radius: 0.5em;
+} 
+
+.item-details-visible {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+.item-details-close-btn {
+  font-size: 2em !important;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0.1em .3em;
+  cursor: pointer;
 }
