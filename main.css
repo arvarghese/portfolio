@@ -166,16 +166,16 @@ hr {
   width: 90%;
   max-height: 90%;
   margin: auto;
-  background: radial-gradient(rgba(0,0,0,.6), black);
+  background: rgba(0,0,0,.5);
   position: fixed;
   top: 50%;
   left: 50%;
   opacity: 0;
   transform: translate(-50%, -300%);
   color: white;
-  border-radius: 0.5em;
   padding: 1em;
   overflow: scroll;
+  box-shadow: .2em .2em .3em rgba(0,0,0,.5);
 } 
 
 .item-details-visible {
