@@ -164,17 +164,19 @@ hr {
 
 .item-details {
   max-width: 60em;
-  min-width: 25em;
-  min-height: 25em;
-  margin: 0px 1em !important;
+  width: 90%;
+  max-height: 90%;
+  margin: auto;
   background: radial-gradient(rgba(0,0,0,.6), black);
   position: fixed;
   top: 50%;
   left: 50%;
   opacity: 0;
-  transform: translate(-50%, -150%);
+  transform: translate(-50%, -300%);
   color: white;
   border-radius: 0.5em;
+  padding: 1em;
+  overflow: scroll;
 } 
 
 .item-details-visible {
