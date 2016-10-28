@@ -39,9 +39,9 @@ var Portfolio = {
 	},
 	loadItemDetails: function(e){
 		e.preventDefault();
+		Portfolio.getItemData($(this).attr('item'));
 		$('#portfolio').addClass('portfolio-hidden');
 		$('#itemDetails').addClass('item-details-visible');
-		Portfolio.getItemData($(this).attr('item'));
 	},
 	hideItemDetails: function(){
 		$('#portfolio').removeClass('portfolio-hidden');
@@ -52,7 +52,9 @@ var Portfolio = {
 		$('#site').html('Website: <a href="'+item.url+'" target="_blank">'+item.url+'</a>');
 		$('#techstack').html("Technology: " + item.techstack);
 		$('#description').html("Description: " + item.description);
-		$('#blog').html('Blog link: <a href="'+item.blog+'" target="_blank"><i class="fa fa-link"></i></a>');
+		if(item.blog){
+			$('#blog').html('Blog link: <a href="'+item.blog+'" target="_blank"><i class="fa fa-link"></i></a>');
+		}
 	}	
 };
 
