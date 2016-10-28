@@ -32,13 +32,11 @@ var portfolioDetails = {
 };
 
 var Portfolio = {
-	showContent: function(e){
-		e.preventDefault();
+	showContent: function(){
 		$(this).find('.content').toggleClass('content-visible');
 		$(this).find('.background').toggleClass('background-covered');
 	},
-	loadItemDetails: function(e){
-		e.preventDefault();
+	loadItemDetails: function(){
 		Portfolio.getItemData($(this).attr('item'));
 		$('#portfolio').addClass('portfolio-hidden');
 		$('#itemDetails').addClass('item-details-visible');
@@ -55,9 +53,17 @@ var Portfolio = {
 		if(item.blog){
 			$('#blog').html('Blog link: <a href="'+item.blog+'" target="_blank"><i class="fa fa-link"></i></a>');
 		}
+	},
+	panItem: function(e){
+      $(this).children('.background').css({
+      	'transform-origin': ((e.pageX - $(this).offset().left) / $(this).width()) * 100 + 
+      	'% ' + ((e.pageY - $(this).offset().top) / $(this).height()) * 100 +'%',
+      	'transition':'.1s'
+      });
 	}	
 };
 
 $('.portfolio-item').hover(Portfolio.showContent);
 $('.more-btn').click(Portfolio.loadItemDetails);
 $('.item-details-close-btn,.item-details').click(Portfolio.hideItemDetails);
+$('.portfolio-item').on('mousemove', Portfolio.panItem); 
