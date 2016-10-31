@@ -99,25 +99,6 @@ h1,h2,h3,h4,h5,h6 {
   transform: translateX(0);
 }
 
-.resume-img {
-  background: url(http://i.imgur.com/PF5imjLh.jpg);
-}
-
-.blog-img {
-  background: url(http://i.imgur.com/jwpYs2zh.jpg);
-}
-
-.landing-img {
-  background: url(http://i.imgur.com/tHvkrGWh.jpg);
-}
-
-.meteor-img {
-  background: url(http://i.imgur.com/IXeTDowh.jpg);
-}
-.resumebuilder-img {
-  background: url(http://i.imgur.com/zLs8iqFh.jpg); 
-}
-
 .more-btn, .site-btn {
   border: 3px solid white;
   padding: .5em;
@@ -186,6 +167,10 @@ hr {
   box-shadow: .2em .2em .3em rgba(0,0,0,.5);
   text-align: center;
 } 
+
+.item-title {
+  text-transform: uppercase;
+}
 
 .item-details-visible {
   transform: translate(-50%, -50%);
