@@ -58,7 +58,7 @@ var Portfolio = {
       $(this).children('.background').css({
       	'transform-origin': ((e.pageX - $(this).offset().left) / $(this).width()) * 100 + 
       	'% ' + ((e.pageY - $(this).offset().top) / $(this).height()) * 100 +'%',
-      	'transition':'.1s'
+      	'transition':'0s'
       });
 	}	
 };
