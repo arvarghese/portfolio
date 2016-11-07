@@ -3,6 +3,8 @@ body {
   font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 100;
   font-size: 2em;
+  background: #333 !important;
+  color: #fff !important;
 }
 
 i,a,h1,ul,li {
@@ -45,11 +47,12 @@ h1,h2,h3,h4,h5,h6 {
   width: 40em;
   height: 20em;
   overflow: hidden;
-  box-shadow: .2em .2em .3em rgba(0,0,0,.5);
   margin: 1em;
   text-align: center;
   transition: .3s ease-in-out;
   position: relative;
+  box-shadow: 0em 0em 1em .2em rgba(0,0,0,.5);
+  border-radius: .3em;
 }
 
 .portfolio-grid {
