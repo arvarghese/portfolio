@@ -197,6 +197,10 @@ hr {
   transition: .3s ease-in-out;
 }
 
+.copyright {
+  font-size: 1.3em !important;  
+}
+
 @media (max-width: 568px) {
   .portfolio-item {
     height: 12em;
