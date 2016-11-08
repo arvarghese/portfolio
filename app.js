@@ -60,7 +60,7 @@ var Portfolio = {
 			var item = portfolio[key];
 			$('#portfolio').append('<div class="portfolio-item wow fadeIn"><div class="content"><h2 class="item-title">'+
 				item.title+'</h2><hr><p class="description">'+
-				item.description+'</p><div class="more-btn" item="'+key+'">Learn More</div><a target="_blank" href="'+
+				item.description+'</p><div class="more-btn" item="'+key+'">Learn More</div><a href="'+
 				item.url+'"><div class="site-btn">Visit Site</div></a></div><div class="background" style="background: url('+
 				item.thumbnail+');"></div></div>');	
 		}
