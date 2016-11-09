@@ -17,6 +17,14 @@ var Portfolio = {
 			"blog":"http://avarghese.me/blog/development/2016/01/01/meteor-website.html",
 			"thumbnail":"http://i.imgur.com/IXeTDowh.jpg"
 		},
+		"travel":{
+			"title":"Travel Gallery",
+			"url":"http://avarghese.me/travel",
+			"techstack":['Github','HTML','Javascript','CSS'],
+			"description":"This is gallery demo made from simple Javascript, HTML, and CSS",
+			"blog":"http://avarghese.me/blog//development/2016/11/09/travel-gallery.html",
+			"thumbnail":"http://i.imgur.com/dwloXIXh.jpg"
+		},
 		"blog":{
 			"title":"My Blog",
 			"url":"http://avarghese.me/blog",
