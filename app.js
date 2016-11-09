@@ -13,7 +13,7 @@ var Portfolio = {
 			"title":"Meteor Website",
 			"url":"http://av.meteorapp.com",
 			"techstack":['Github','HTML','Javascript','CSS'],
-			"description":"This is my personal site built using Meteor.js",
+			"description":"This is my personal site built using Meteor.js<br>CURRENTLY DOWN FOR MAINTENANCE",
 			"blog":"http://avarghese.me/blog/development/2016/01/01/meteor-website.html",
 			"thumbnail":"http://i.imgur.com/IXeTDowh.jpg"
 		},
