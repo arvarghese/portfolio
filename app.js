@@ -2,51 +2,45 @@ new WOW().init()
 
 var Portfolio = {
 	portfolioItems: {
-		"home":{
+		"landing":{
 			"title":"Personal Website",
 			"url":"http://avarghese.me/",
 			"techstack":['Github','HTML','Javascript','CSS'],
-			"description":"This is my personal site made from simple Javascript, HTML, and CSS",
-			"thumbnail":"http://i.imgur.com/tHvkrGWh.jpg"
+			"description":"This is my personal site made from simple Javascript, HTML, and CSS"
 		},
 		"meteor":{
 			"title":"Meteor Website",
 			"url":"http://av.meteorapp.com",
 			"techstack":['Github','HTML','Javascript','CSS'],
 			"description":"This is my personal site built using Meteor.js<br>CURRENTLY DOWN FOR MAINTENANCE",
-			"blog":"http://avarghese.me/blog/development/2016/01/01/meteor-website.html",
-			"thumbnail":"http://i.imgur.com/IXeTDowh.jpg"
+			"blog":"http://avarghese.me/blog/development/2016/01/01/meteor-website.html"		
 		},
 		"travel":{
 			"title":"Travel Gallery",
 			"url":"http://avarghese.me/travel",
 			"techstack":['Github','HTML','Javascript','CSS'],
 			"description":"This is gallery demo made from simple Javascript, HTML, and CSS",
-			"blog":"http://avarghese.me/blog//development/2016/11/09/travel-gallery.html",
-			"thumbnail":"http://i.imgur.com/dwloXIXh.jpg"
+			"blog":"http://avarghese.me/blog//development/2016/11/09/travel-gallery.html"
 		},
 		"blog":{
 			"title":"My Blog",
 			"url":"http://avarghese.me/blog",
 			"techstack":['Github','HTML','Javascript','CSS'],
 			"description":"This is my personal blog created using Jekyll and Github",
-			"blog":"http://avarghese.me/blog/development/2016/04/28/jekyll-blog.html",
-			"thumbnail":"http://i.imgur.com/jwpYs2zh.jpg"
+			"blog":"http://avarghese.me/blog/development/2016/04/28/jekyll-blog.html"
 		},
 		"resume":{
 			"title":"Online Resume",
 			"url":"http://avarghese.me/resume",
 			"techstack":['Github','HTML','Javascript','CSS'],
-			"description":"This is my resume site made from simple Javascript, HTML, and CSS",
-			"thumbnail":"http://i.imgur.com/PF5imjLh.jpg"
+			"description":"This is my resume site made from simple Javascript, HTML, and CSS"
 		},
-		"resumebuilder":{
+		"rb-app":{
 			"title":"Resume Builder",
 			"url":"https://resume-builder5.herokuapp.com/",
 			"techstack":['Node','Angular 1','Heroku','HTML','Javascript','CSS'],
 			"description":"This is a demo app created using Angular 1, Node, Heroku",
-			"blog":"http://avarghese.me/blog/development/2016/06/01/first-mean-project.html",
-			"thumbnail":"http://i.imgur.com/zLs8iqFh.jpg"
+			"blog":"http://avarghese.me/blog/development/2016/06/01/first-mean-project.html"
 		}
 	},
 	initialize: function(){
@@ -70,7 +64,7 @@ var Portfolio = {
 				item.title+'</h2><hr><p class="description">'+
 				item.description+'</p><div class="more-btn" item="'+key+'">Learn More</div><a href="'+
 				item.url+'"><div class="site-btn">Visit Site</div></a></div><div class="background" style="background: url('+
-				item.thumbnail+');"></div></div>');	
+				'public/images/portfolio-images/'+key+'.jpg);"></div></div>');	
 		}
 	},
 	loadItemDetails: function(){
@@ -84,10 +78,10 @@ var Portfolio = {
 		$('#portfolio').removeClass('portfolio-hidden');
 		$('#itemDetails').removeClass('item-details-visible');		
 	},
-	getItemData: function(item){
-		var item = Portfolio.portfolioItems[item];
+	getItemData: function(key){
+		var item = Portfolio.portfolioItems[key];
 		$('#title').html(item.title);
-		$('#thumbnail').html('<img src="'+item.thumbnail+'" class="item-thumbnail"></img>');
+		$('#thumbnail').html('<img src="'+'public/images/portfolio-images/'+key+'.jpg" class="item-thumbnail"></img>');
 		$('#site').html('<h4>Website:</h4><a href="'+item.url+'" target="_blank">'+item.url+'&nbsp; <i class="fa fa-external-link"></i></a>');
 		$('#techstack').html('<h4>Technology:</h4>' + item.techstack);
 		$('#description').html('<h4>Description:</h4> <i class="fa fa-quote-left"></i> &nbsp;' +item.description+'&nbsp; <i class="fa fa-quote-right"></i>');
