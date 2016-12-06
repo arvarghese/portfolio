@@ -2,6 +2,12 @@ new WOW().init()
 
 var Portfolio = {
 	portfolioItems: {
+		"charmingdesigns":{
+			"title":"Charming Designs",
+			"url":"http://charmingdesigns.us",
+			"techstack":['Github','HTML','Javascript','CSS'],
+			"description":"This a website for a client made to promote their services"
+		},
 		"landing":{
 			"title":"Personal Website",
 			"url":"http://avarghese.me/",
@@ -51,7 +57,7 @@ var Portfolio = {
 		$('.portfolio-item').hover(Portfolio.showContent);
 		$('.more-btn').click(Portfolio.loadItemDetails);
 		$('.item-details-close-btn,.item-details').click(Portfolio.hideItemDetails);
-		$('.portfolio-item').on('mousemove', Portfolio.panItem); 
+		// $('.portfolio-item').on('mousemove', Portfolio.panItem); 
 	},
 	showContent: function(){
 		$(this).find('.content').toggleClass('content-visible');
