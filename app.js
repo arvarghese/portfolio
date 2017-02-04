@@ -2,11 +2,17 @@ new WOW().init()
 
 var Portfolio = {
 	portfolioItems: {
+		"photogrid":{
+			"title":"Photo Grid",
+			"url":"http://avarghese.me/photoGrid/",
+			"techstack":['Github','HTML','Javascript','CSS'],
+			"description":"This is a Javascript implementation of Mac's Photo Tiles screensaver"
+		},
 		"charmingdesigns":{
 			"title":"Charming Designs",
 			"url":"http://charmingdesigns.us",
 			"techstack":['Github','HTML','Javascript','CSS'],
-			"description":"This a website for a client made to promote their services"
+			"description":"This is a website for a client made to promote their services"
 		},
 		"landing":{
 			"title":"Personal Website",
