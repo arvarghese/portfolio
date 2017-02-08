@@ -61,7 +61,6 @@ var Portfolio = {
         $('.portfolio-item').hover(Portfolio.showContent);
         $('.more-btn').click(Portfolio.loadItemDetails);
         $('.item-details-close-btn,.item-details').click(Portfolio.hideItemDetails);
-        $('.portfolio-item').on('mousemove', Portfolio.panItem);
     },
     showContent: function (e) {
         var element = e.target.parentNode;
@@ -96,13 +95,5 @@ var Portfolio = {
         if (item.blog) {
             $('#blog').html("<h4>Blog link:</h4><a href=\"" + item.blog + "\" target=\"_blank\">" + item.blog + "&nbsp; <i class=\"fa fa-external-link\"></i></a>");
         }
-    },
-    panItem: function (e) {
-        var item = e.target.parentNode;
-        console.log(item);
-        $(item).children(".background").css({
-            "transform-origin": ((e.pageX - $(item).offset().left) / $(item).width()) * 100 + "% " + ((e.pageY - $(item).offset().top) / $(item).height()) * 100 + "%"
-        });
     }
 };
-Portfolio.initialize();
