@@ -2,7 +2,7 @@ let Portfolio = {
 	portfolioItems: {
 		"phototiles": {
 			"title": "Photo Tiles",
-			"url": "http://aletghese.me/photo-tiles/",
+			"url": "http://avarghese.me/photo-tiles/",
 			"techstack": ['Github', 'HTML', 'Javascript', 'CSS'],
 			"description": "This is a Javascript implementation of Mac's Photo Tiles screensaver"
 		},
@@ -14,7 +14,7 @@ let Portfolio = {
 		},
 		"landing": {
 			"title": "Personal Website",
-			"url": "http://aletghese.me/",
+			"url": "http://avarghese.me/",
 			"techstack": ['Github', 'HTML', 'Javascript', 'CSS'],
 			"description": "This is my personal site made from simple Javascript, HTML, and CSS"
 		},
@@ -23,25 +23,25 @@ let Portfolio = {
 			"url": "http://av.meteorapp.com",
 			"techstack": ['Github', 'HTML', 'Javascript', 'CSS'],
 			"description": "This is my personal site built using Meteor.js<br>CURRENTLY DOWN FOR MAINTENANCE",
-			"blog": "http://aletghese.me/blog/development/2016/01/01/meteor-website.html"
+			"blog": "http://avarghese.me/blog/development/2016/01/01/meteor-website.html"
 		},
 		"travel": {
 			"title": "Travel Gallery",
-			"url": "http://aletghese.me/travel",
+			"url": "http://avarghese.me/travel",
 			"techstack": ['Github', 'HTML', 'Javascript', 'CSS'],
 			"description": "This is gallery demo made from simple Javascript, HTML, and CSS",
-			"blog": "http://aletghese.me/blog//development/2016/11/09/travel-gallery.html"
+			"blog": "http://avarghese.me/blog//development/2016/11/09/travel-gallery.html"
 		},
 		"blog": {
 			"title": "My Blog",
-			"url": "http://aletghese.me/blog",
+			"url": "http://avarghese.me/blog",
 			"techstack": ['Github', 'HTML', 'Javascript', 'CSS'],
 			"description": "This is my personal blog created using Jekyll and Github",
-			"blog": "http://aletghese.me/blog/development/2016/04/28/jekyll-blog.html"
+			"blog": "http://avarghese.me/blog/development/2016/04/28/jekyll-blog.html"
 		},
 		"resume": {
 			"title": "Online Resume",
-			"url": "http://aletghese.me/resume",
+			"url": "http://avarghese.me/resume",
 			"techstack": ['Github', 'HTML', 'Javascript', 'CSS'],
 			"description": "This is my resume site made from simple Javascript, HTML, and CSS"
 		},
@@ -50,7 +50,7 @@ let Portfolio = {
 			"url": "https://resume-builder5.herokuapp.com/",
 			"techstack": ['Node', 'Angular 1', 'Heroku', 'HTML', 'Javascript', 'CSS'],
 			"description": "This is a demo app created using Angular 1, Node, Heroku",
-			"blog": "http://aletghese.me/blog/development/2016/06/01/first-mean-project.html"
+			"blog": "http://avarghese.me/blog/development/2016/06/01/first-mean-project.html"
 		}
 	},
 	initialize: () => {
@@ -74,8 +74,7 @@ let Portfolio = {
 		}
 	},
 	loadItemDetails: (e) => {
-		let element = e.target.parentNode;
-		Portfolio.getItemData($(element).attr('item'));
+		Portfolio.getItemData($(e.target).attr('item'));
 		$('#header').addClass('header-hidden')
 		$('#portfolio').addClass('portfolio-hidden');
 		$('#itemDetails').addClass('item-details-visible');

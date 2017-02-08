@@ -181,6 +181,7 @@ hr {
   text-align: center; }
 
 .item-title {
+  font-weight: 500 !important;
   text-transform: uppercase; }
 
 .item-details-visible {
