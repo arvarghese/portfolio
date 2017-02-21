@@ -12,12 +12,12 @@
     "prestart": "npm install",
     "start": "gulp serve",
     "package": "gulp package",
-    "register": "bower register portfolio https://github.com/arvarghese/portfolio",
+    "register": "bower register portfolio https://github.com/varararun/portfolio",
     "test": "karma start karma.conf.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/arvarghese/portfolio.git"
+    "url": "https://github.com/varararun/portfolio.git"
   },
   "author": "arun varghese",
   "contributors": [
@@ -28,9 +28,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/arvarghese/portfolio/issues"
+    "url": "https://github.com/varararun/portfolio/issues"
   },
-  "homepage": "https://github.com/arvarghese/portfolio",
+  "homepage": "https://github.com/varararun/portfolio",
   "keywords": [
     "portfolio",
     "tiles"
