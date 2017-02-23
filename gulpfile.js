@@ -1,54 +1,40 @@
-var pkg = require("./package.json");
-var gulp = require("gulp");
-var sass = require("gulp-sass");
-var jshint = require("gulp-jshint");
-var stylish = require("jshint-stylish");
-var beautify = require("gulp-jsbeautifier");
-var cleanCSS = require("gulp-clean-css");
-var rename = require("gulp-rename");
-var uglify = require("gulp-uglify");
-var browserSync = require("browser-sync").create();
-var autoprefixer = require("gulp-autoprefixer");
-var header = require("gulp-header");
-var ts = require("gulp-typescript");
-var tsProject = ts.createProject("tsconfig.json");
+var ts = require('gulp-typescript');
+var del = require('del');
+var pkg = require('./package.json');
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+var header = require('gulp-header');
+var rename = require('gulp-rename');
+var uglify = require('gulp-uglify');
+var jshint = require('gulp-jshint');
+var stylish = require('jshint-stylish');
+var beautify = require('gulp-jsbeautifier');
+var cleanCSS = require('gulp-clean-css');
+var tsProject = ts.createProject('tsconfig.json');
 var sourcemaps = require('gulp-sourcemaps');
-var del = require("del");
-var runSequence = require("run-sequence");
+var runSequence = require('run-sequence');
+var browserSync = require('browser-sync').create();
+var autoprefixer = require('gulp-autoprefixer');
 
-var defaultTasks = ['scss', 'format', 'jshint'];
+var paths = {
+  scss: 'assets/css/portfolio.scss',
+  css: 'assets/css/portfolio.css',  
+  ts:'assets/js/portfolio.ts',
+  js:'assets/js/portfolio.js'
+}
 
-var banner = ["/*\n",
-  " * <%= pkg.title %> (<%= pkg.homepage %>)\n",
-  " * Copyright 2016-" + (new Date()).getFullYear(), " <%= pkg.author %>\n",
-  " */\n",
-  ""
-].join("");
+var banner = ['/*\n',
+  ' * <%= pkg.title %> (<%= pkg.homepage %>)\n',
+  ' * Copyright 2016-' + (new Date()).getFullYear(), ' <%= pkg.author %>\n',
+  ' */\n',
+  ''
+].join('');
 
-gulp.task('default', ['serve']);
-
-
-gulp.task("typescript", function () {
-  tsProject.src()
-    .pipe(tsProject())
-    .js.pipe(gulp.dest("assets/js"));
-});
-
-gulp.task('scss', function () {
-  return gulp.src('assets/css/**/*.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer({
-      browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
-    }))
-    .pipe(header(banner, {
-      pkg: pkg
-    }))
-    .pipe(gulp.dest('assets/css'));
-});
+/** Miscellaneous Tasks **/
 
 gulp.task('jshint', function () {
   return gulp.src([
-      'assets/js/portfolio.js',
+      paths.ts,
       '*.js'
     ])
     .pipe(jshint())
@@ -58,8 +44,8 @@ gulp.task('jshint', function () {
 
 gulp.task('format', function () {
   return gulp.src([
-      'assets/css/portfolio.css',
-      'client/js/portfolio.js',
+       paths.scss,
+       paths.ts,
       'index.html',
       '*.{js,json}'
     ], {
@@ -69,44 +55,26 @@ gulp.task('format', function () {
     .pipe(gulp.dest('./'));
 });
 
-gulp.task("clean-css", function () {
+/** JavaScript Tasks **/
+
+gulp.task('clean-js', function () {
   return del.sync([
-    "assets/css/*.min.css",
-    "assets/css/*.map"
+    'assets/js/*.min.js',
+    'assets/js/*.map'
   ], {
     force: true
   });
 });
 
-gulp.task("clean-js", function () {
-  return del.sync([
-    "assets/js/*.min.js",
-    "assets/js/*.map"
-  ], {
-    force: true
-  });
-});
-
-gulp.task("minify", function () {
-  return runSequence("clean-css", "scss", "minify-css", "sourcemap-css", "clean-js", "typescript", "minify-js", "sourcemap-js");
-});
-
-gulp.task('minify-css', ['scss'], function () {
-  return gulp.src([
-      'assets/css/portfolio.css'
-    ])
-    .pipe(cleanCSS({
-      compatibility: 'ie8'
-    }))
-    .pipe(rename({
-      suffix: '.min'
-    }))
-    .pipe(gulp.dest('assets/css'));
+gulp.task('typescript', function () {
+  tsProject.src()
+    .pipe(tsProject())
+    .js.pipe(gulp.dest('assets/js'));
 });
 
 gulp.task('minify-js', function () {
   return gulp.src([
-      'assets/js/portfolio.js'
+       paths.js
     ])
     .pipe(uglify())
     .pipe(header(banner, {
@@ -118,6 +86,67 @@ gulp.task('minify-js', function () {
     .pipe(gulp.dest('assets/js'));
 });
 
+gulp.task('sourcemap-js', function () {
+  return gulp.src([
+      'assets/js/*.min.js',
+      '!assets/js/*spec.js'
+    ])
+    .pipe(sourcemaps.init())
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('assets/js'));
+});
+
+gulp.task('js', function () {
+  return runSequence('clean-js', 'typescript', 'minify-js', 'sourcemap-js');
+});
+
+/** CSS Tasks **/
+
+gulp.task('clean-css', function () {
+  return del.sync([
+    'assets/css/*.min.css',
+    'assets/css/*.map'
+  ], {
+    force: true
+  });
+});
+
+gulp.task('scss', function () {
+  return gulp.src('assets/css/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
+    }))
+    .pipe(gulp.dest('assets/css'));
+});
+
+gulp.task('minify-css', ['scss'], function () {
+  return gulp.src([
+       paths.css
+    ])
+    .pipe(cleanCSS({
+      compatibility: 'ie8'
+    }))
+    .pipe(header(banner, {
+      pkg: pkg
+    }))
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(gulp.dest('assets/css'));
+});
+
+gulp.task('sourcemap-css', function () {
+  return gulp.src([
+      'assets/css/*.min.css'
+    ])
+    .pipe(sourcemaps.init())
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('assets/css'));
+});
+
+/** Server Task **/
+
 gulp.task('browserSync', function () {
   return browserSync.init({
     server: {
@@ -127,37 +156,23 @@ gulp.task('browserSync', function () {
   });
 });
 
-gulp.task("sourcemap-css", function () {
-  return gulp.src([
-      "assets/css/*.min.css"
-    ])
-    .pipe(sourcemaps.init())
-    .pipe(sourcemaps.write("./"))
-    .pipe(gulp.dest("assets/css"));
+/** Task Flows **/
+
+gulp.task('css', function () {
+  return runSequence('clean-css', 'scss', 'minify-css', 'sourcemap-css');
 });
 
-gulp.task("sourcemap-js", function () {
-  return gulp.src([
-      "assets/js/*.min.js",
-      "!assets/js/*spec.js"
-    ])
-    .pipe(sourcemaps.init())
-    .pipe(sourcemaps.write("./"))
-    .pipe(gulp.dest("assets/js"));
+gulp.task('minify', function () {
+  return runSequence('css', 'js');
 });
 
 gulp.task('serve', function () {
-  runSequence("browserSync", "minify");
-
-  gulp.watch('assets/css/**/*.scss', ['scss']);
-  gulp.watch('assets/css/portfolio.css', ['minify-css']);
-  gulp.watch("assets/js/portfolio.ts", ["typescript"]);
-  gulp.watch('assets/js/portfolio.js', ['minify-js']);
+  runSequence('minify', 'browserSync');
+  gulp.watch('assets/css/**/*.scss', ['css', browserSync.reload]);
+  gulp.watch('assets/js/**/*.ts', ['js', browserSync.reload]);
   gulp.watch('index.html', browserSync.reload);
-  gulp.watch([
-    'assets/js/portfolio.min.js',
-    'assets/css/portfolio.min.css'
-  ], browserSync.reload);
 });
+
+gulp.task('default', ['serve']);
 
 module.exports = gulp;
