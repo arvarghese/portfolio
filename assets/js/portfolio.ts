@@ -1,5 +1,11 @@
 let Portfolio = {
 	portfolioItems: {
+		"cardash": {
+			"title": "Car Dashboard",
+			"url": "http://www.raptor.site/",
+			"techstack": ['HTML', 'Javascript', 'CSS', 'Travis-CI', 'Hound-CI', 'Gulp', 'Bower'],
+			"description": "This is a Web application used for viewing, tracking, and assigning expenses for friends' investments in a rally car"
+		},
 		"phototiles": {
 			"title": "Photo Tiles",
 			"url": "http://avarghese.me/photo-tiles/",
